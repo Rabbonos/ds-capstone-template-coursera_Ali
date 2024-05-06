@@ -1,2 +1,0 @@
-name,height,weight,eye_color
-Ali,1.72,61kg,brownaliali2bobre

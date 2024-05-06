@@ -1,0 +1,19 @@
+library (datasets)
+
+data("mtcars")
+head(mtcars,5)
+
+install.packages("GGally", repos = "https://cran.r-project.org", type = "source") 
+install.packages("ggplot2")
+library(ggplot2)
+ggplot(aes(x=disp,y=mpg,),data=mtcars)+geom_point()+ggtitle("displacement vs miles per gallon") + labs(x= "Displacement", y = "Miles per Gallon")
+
+mtcars$vs <- as.factor(mtcars$vs)
+mtcars$vs
+ggplot(aes(x=vs, y=mpg), data=mtcars)+geom_boxplot()
+ggplot(aes(x=vs, y=mpg), data=mtcars)+geom_point()
+
+ggplot(aes(x=vs, y=mpg, fill = vs), data = mtcars) + geom_boxplot(alpha=0.3) + theme(legend.position="none") 
+
+ggplot(aes(x=wt),data=mtcars) + geom_histogram(binwidth=0.5)
+ggplot(aes(x=wt),data=mtcars) + geom_dotplot(binwidth = 1/10)
